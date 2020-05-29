@@ -1,7 +1,7 @@
 version: '2'
 services:
   web:
-    container_name: mnist_api
+    container_name: tlai_api
     build: .
     restart: always
     volumes:
@@ -11,7 +11,7 @@ services:
       - "5000:5000"
     networks:
       mynet:
-        ipv4_address: 10.5.0.4
+        ipv4_address: 10.10.10.4
   tf-serving:
     image: tensorflow/serving
     restart: always
@@ -21,16 +21,16 @@ services:
     volumes:
       - ./serving:/models
       - ./serving_docker.config:/models/serving_docker.config
-      - ./saved_model:/models/mnist
+      - ./saved_model:/models/tlai
     command: --model_config_file=/models/serving_docker.config
     networks:
       mynet:
-        ipv4_address: 10.5.0.5
+        ipv4_address: 10.10.10.5
 
 networks:
   mynet:
     driver: bridge
     ipam:
      config:
-       - subnet: 10.5.0.0/16
-         gateway: 10.5.0.1
+       - subnet: 10.10.10.0/16
+         gateway: 10.10.10.1

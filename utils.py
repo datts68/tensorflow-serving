@@ -30,11 +30,11 @@ def convert_image(encoded_img, to_rgb=False):
 
 def grpc_infer(img):
 
-    channel = grpc.insecure_channel("10.5.0.5:8500")
+    channel = grpc.insecure_channel("10.10.10.5:8500")
     stub = prediction_service_pb2_grpc.PredictionServiceStub(channel)
 
     request = predict_pb2.PredictRequest()
-    request.model_spec.name = "mnist-serving"
+    request.model_spec.name = "tlai"
     request.model_spec.signature_name = "serving_default"
 
     if img.ndim == 3:
