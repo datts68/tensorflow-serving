@@ -1,13 +1,13 @@
-# tensorflow-serving-docker
+# Tensorflow-serving
 Tensorflow Serving with Docker / Docker Compose
 
 # Command 
 
 ```bash
-# step 1
+# Step 1
 docker-compose build
 
-# step 2 
+# Step 2 
 docker-compose up
 ```
 
