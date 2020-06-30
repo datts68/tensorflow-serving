@@ -14,5 +14,5 @@ docker-compose up
 # Request
 
 - **Input**: base64 image
-- HTTP request: `host:8501/v1/models/mnist-serving:predict`
+- HTTP request: `host:8501/v1/models/tlai-serving:predict`
 - gRPC request: see [utils.py](utils.py) for more information about how to make gRPC request with protobuf pre-build
